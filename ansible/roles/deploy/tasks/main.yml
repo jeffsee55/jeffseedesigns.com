@@ -5,7 +5,7 @@
 - name: Clone project files
   git: repo="git@github.com:jeffsee55/jeffseedesigns.com.git"
        dest="site"
-       version="1.0"
+       version="{{ project_version }}"
        accept_hostkey=yes
   register: git_commit
 
