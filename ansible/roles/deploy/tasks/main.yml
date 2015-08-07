@@ -3,8 +3,8 @@
   deploy_helper: path="{{ project_root }}" state=present
 
 - name: Clone project files
-  git: repo="git@github.com:jeffsee55/jeffseedesigns.com.git"
-       dest="site"
+  git: repo="{{ project_git_repo }}"
+       dest="{{ project_subtree }}"
        version="{{ project_version }}"
        accept_hostkey=yes
   register: git_commit
