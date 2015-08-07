@@ -1,6 +1,9 @@
 .slick-center {
-  @extend .popout;
   transform: scale(1.08);
+
+  @media(min-width: $screen-sm) {
+    @extend .popout;
+  }
 }
 .slick-prev:before {
   @extend .material-icons;
@@ -17,6 +20,11 @@
   bottom: -0.8em;
   cursor: pointer;
   z-index: 10;
+  display: none !important;
+
+  @media(min-width: $screen-sm) {
+    display: block !important;
+  }
 
   &.arrow-left {
     left: 25px;

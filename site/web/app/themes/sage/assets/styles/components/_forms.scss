@@ -5,6 +5,7 @@
   }
 
   p {
+    @extend .clearfix;
     text-align: center;
   }
 
@@ -57,21 +58,21 @@
   input[type='submit'] {
     float: right;
   }
+
+  span.wpcf7-not-valid-tip {
+    color: white;
+  }
 }
 
 .wpcf7-response-output {
-  position: fixed !important;
-  top: 0 !important;
+  /*position: fixed !important;*/
+  /*top: 0 !important;*/
   padding: 1em !important;
-  left: 2em;
-  right: 2em;
+  /*left: 2em;*/
+  /*right: 2em;*/
   background-color: white !important;
   border: none !important;
   font-size: 16px !important;
   color: #333;
   box-shadow: $box-shadow;
 }
-div[role="alert"]:before {
-  content: "Sorry. ";
-}
-

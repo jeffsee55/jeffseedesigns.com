@@ -5,11 +5,17 @@
 }
 .section:first-child {
   background-image: url(../images/code-blur.png);
-  background-size: 1200px;
+  background-size: 1000px;
+  background-size: 1000px;
 
   img {
     background-image: url(../images/code.png);
-    background-size: 1200px;
+    background-size: 1000px;
+    max-width: 90%;
+
+    @media(min-width: $screen-sm) {
+      max-width: 100%;
+    }
   }
 }
 .portfolio {

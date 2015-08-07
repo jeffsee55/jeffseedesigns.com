@@ -5,10 +5,10 @@ mysql_user: root
 www_root: /srv/www
 
 mail_smtp_server: smtp.mandrillapp.com:587
-mail_admin: admin@example.com
-mail_hostname: example.com
+mail_admin: jeffsee.55@gmail.com
+mail_hostname: jeffseedesigns.com
 mail_user: smtp_user
-mail_password: smtp_password
+mail_password: AjKMgFSIZBFKCpUs7olSig
 
 hhvm: false
 
