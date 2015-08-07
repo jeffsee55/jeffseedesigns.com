@@ -1,0 +1,65 @@
+label {
+  padding: 0.5em 1em;
+  color: $gray;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+label.lg {
+  padding: 0.5em 1em;
+  color: $gray;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+button, a, input[type='submit'] {
+  &.primary {
+    text-transform: uppercase;
+    /* button bg: */
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid white;
+    /* NORMAL: */
+    padding: 1em 2em;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 16px;
+
+    &:hover {
+      border-color: white;
+      background: transparentize($red, 0.15);
+      box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+    }
+
+    &:focus {
+      border-color: white;
+      background: transparentize($red, 0.15);
+      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.12), 0px 8px 8px 0px rgba(0,0,0,0.24);
+    }
+  }
+
+  &.flat {
+    background-color: transparent;
+    border: none;
+    color: red;
+    text-transform: uppercase;
+    float: right;
+
+    &:hover {
+      color: $red;
+      border-color: transparent;
+      background: none;
+    }
+
+    &:focus {
+      color: $red;
+      border-color: transparent;
+      background: none;
+    }
+  }
+}

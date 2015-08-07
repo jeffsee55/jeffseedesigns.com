@@ -1,0 +1,32 @@
+.card {
+  @include clearfix;
+  @include transition(all 0.5s ease-in-out);
+
+  & > * {
+    @include transition(all 0.5s ease-in-out);
+  }
+
+  background: #fff;
+  border-radius: 2px;
+  /* chip bg: */
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.22), 0px 2px 2px 0px rgba(0,0,0,0.24);
+}
+
+.popout {
+  box-shadow: 0px 15px 12px 0px rgba(0,0,0,0.22), 0px 19px 38px 0px rgba(0,0,0,0.30);
+  background: #FAFAFA;
+}
+
+.center-box {
+  @extend .center-block;
+  padding: 1em;
+  text-align: justify;
+
+  @media(min-width: $screen-sm) {
+    width: 400px;
+    padding: 0;
+  }
+  @media(min-width: $screen-md) {
+    width: 600px;
+  }
+}

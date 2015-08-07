@@ -1,0 +1,77 @@
+.wpcf7-form {
+
+  img.ajax-loader {
+    display: none !important;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  input {
+    background-color: $red;
+    border: none;
+    border-bottom: 2px solid white;
+    line-height: 2;
+    font-size: 16px;
+    padding-left: 10px;
+    margin: 1em 0;
+    border-radius: 0px;
+    max-width: 100%;
+  }
+
+  input[name="message"] {
+    width: 100%;
+  }
+
+  ::-webkit-input-placeholder {
+   color: white;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: white;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: white;  
+  }
+
+  :-ms-input-placeholder {  
+    color: white;  
+  }
+
+  select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 2em;
+    font-family: "Bitter";
+
+    &:focus, &:active {
+      border: none;
+    }
+  }
+
+  input[type='submit'] {
+    float: right;
+  }
+}
+
+.wpcf7-response-output {
+  position: fixed !important;
+  top: 0 !important;
+  padding: 1em !important;
+  left: 2em;
+  right: 2em;
+  background-color: white !important;
+  border: none !important;
+  font-size: 16px !important;
+  color: #333;
+  box-shadow: $box-shadow;
+}
+div[role="alert"]:before {
+  content: "Sorry. ";
+}
+

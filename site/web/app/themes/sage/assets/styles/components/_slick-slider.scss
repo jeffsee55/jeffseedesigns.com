@@ -1,0 +1,50 @@
+.slick-center {
+  @extend .popout;
+  transform: scale(1.08);
+}
+.slick-prev:before {
+  @extend .material-icons;
+  content: "&#xE8DE";
+  color: #333;
+}
+
+.slick-track {
+  padding-bottom: 2em;
+}
+
+.slick-arrow {
+  position: absolute;
+  bottom: -0.8em;
+  cursor: pointer;
+  z-index: 10;
+
+  &.arrow-left {
+    left: 25px;
+  }
+  &.arrow-right {
+    right: 25px;
+  }
+}
+.slick-dots {
+  bottom: -4em;
+
+  li {
+
+    &.slick-active button:before {
+      background-color: #333;
+    }
+
+    button:before {
+      content: "";
+      border-radius: 50%;
+      background-color: transparent;
+      border: 2px solid #333;
+      height: 10px;
+      width: 10px;
+
+      &:hover {
+        background-color: transparentize(#333, 0.3);
+      }
+    }
+  }
+}

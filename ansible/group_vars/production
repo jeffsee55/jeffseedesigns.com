@@ -1,0 +1,59 @@
+mysql_root_password: ExQDRKPwCD
+
+github_ssh_keys:
+  - username: jeffsee55
+    authorized:
+      - "{{ web_user }}"
+
+project_pre_build_commands_local:
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: npm install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: bower install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: gulp --production
+
+project_local_files:
+  - name: load compressed assets
+    src: "{{ project.local_path }}/web/app/themes/sage/dist"
+    dest: web/app/themes/sage
+  - name: load plugins
+    src: "{{ project.local_path }}/web/app/plugins"
+    dest: web/app/
+  - name: sync local uploads
+    src: "{{ project.local_path }}/web/app/uploads"
+    dest: ../../shared
+
+wordpress_sites:
+  jeffseedesigns.com:
+    site_hosts:
+      - jeffseedesigns.com
+      - 45.55.198.123
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:jeffsee55/jeffseedesigns.com.git
+    branch: master
+    subtree: site
+    multisite:
+      enabled: false
+      subdomains: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+      duration: 30s
+    system_cron: true
+    env:
+      wp_home: http://45.55.198.123
+      wp_siteurl: http://45.55.198.123/wp
+      wp_env: production
+      db_name: jeffseedesigns
+      db_user: jeffsee55
+      db_password: js281883
+      auth_key: "RP/{g<Nth&(1$X;V./vS-Y*0Rv.!rIq0FML?H} bdO$8,U Hb[X>YH#d+=:sSs-B"
+      auth_salt: "y(-I343-xph:>b$EPjR4K!>-jha?AX^5.!kV]IA^Hwy<d`qKCvyaT_w>(U>ERm_g"
+      logged_in_key: "%w-UP(@eqe~S}T9N`*_YSMgV-M>K5Es-crj^xkb[.|$b]q 0j-QeRsGCHNd]uvD("
+      logged_in_salt: "(i2+gtLH;h `<-_P=lhyb`?KhETDa!:TvJ t#IjKYniD+uIhX_9>)b4C#6G+!5G#"
+      nonce_key: "-_2+e13qVWnJQXGyvd2*j,A<ISAwT>+8J2FBmLL=bLJRFz#+G<v8Z]@&>-)+kk[X"
+      nonce_salt: "6v+vY+XIWw2uIidwTAi$&k|rm4wEZli_W3G??e{K@V[<uw`!?{&tS;8X,WQ6=<g-"
+      secure_auth_key: "q6A=HdilI`(;9%CftKZnrS?%smBeLO7TN&[v6ZEq?0/Hvb<d+X;d%1A(>{w_Z<6?"
+      secure_auth_salt: "r5CJ 4y?+H(6h{!z5@}>f |* N>%TO:YwV#I#Pwxcm|_Z</yW.qy-4/:b4D18f#["

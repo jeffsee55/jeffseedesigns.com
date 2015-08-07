@@ -1,0 +1,164 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section:first-child {
+  background-image: url(../images/code-blur.png);
+  background-size: 1200px;
+
+  img {
+    background-image: url(../images/code.png);
+    background-size: 1200px;
+  }
+}
+.portfolio {
+
+  ul.portfolio-slider {
+
+    li.slick-slide {
+      margin: 2em;
+      transition: all 300ms ease;
+      position: relative;
+      overflow-y: hidden;
+      max-width: 300px;
+
+      @media(min-width: $screen-sm) {
+        max-width: 500px;
+      }
+
+      .expand {
+        display: none;
+        @media(min-width: $screen-sm) {
+          display: block;
+        }
+        position: absolute;
+        bottom: 1em;
+        transition: all 300ms ease;
+        right: 1em;
+        background: white;
+        padding: 0.3em;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &.rotate {
+          transform: rotate(-180deg);
+          z-index: 10;
+          background-color: $red;
+          color: white;
+          right: 1em;
+          bottom: 1em;
+          border-radius: 0;
+        }
+      }
+
+      .caption {
+        display: none;
+        @media(min-width: $screen-sm) {
+          display: block;
+        }
+        transition: all 300ms ease;
+        @extend .material-icons;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 100%;
+
+        &.show-more {
+          top: 0;
+        }
+
+        button {
+          float: right;
+        }
+
+        & > div {
+          box-shadow: $box-shadow;
+          padding: 2em;
+          margin: 2em;
+          background: white;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+
+          .body {
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+  div.labels {
+    margin-left: 2em;
+    display: none;
+
+    @media(min-width: 1024px) {
+      display: block;
+    }
+
+    label {
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: $box-shadow;
+      }
+
+      &.active-label {
+        border-color: #333;
+        color: #333;
+      }
+    }
+  }
+}
+.services {
+
+  .service-card {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    height: 300px;
+
+    @media(min-width: $screen-sm) {
+      @include make-sm-column(6);
+    }
+    @media(min-width: $screen-md) {
+      @include make-md-column(4);
+    }
+
+    img {
+      width: 75px;
+    }
+
+    p {
+      font-size: 16px;
+      color: $gray;
+    }
+
+    .labels {
+      @extend .center-block;
+      width: 80%;
+    }
+  }
+}
+.contact {
+  background: $red;
+  color: white;
+
+  .center-box {
+
+    button {
+      float: right;
+      margin-top: 2em;
+    }
+  }
+}
+.about {
+  background: $red;
+  color: white;
+}
+.philosophy {
+  background: $red;
+  color: white;
+}
